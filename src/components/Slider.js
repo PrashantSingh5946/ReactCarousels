@@ -24,6 +24,13 @@ function Slider(props) {
   const stateRef= useRef({});
   const nextRef= useRef({});
   stateRef.current = state;
+
+  useEffect(()=>{
+    const cleanup = window.addEventListener('resize',() => {
+      setState({...state,width:getWidth,translate:-getWidth});
+      return cleanup;
+    })
+  },[])
   
   
   const prevSlide = () => {
