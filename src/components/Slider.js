@@ -6,7 +6,6 @@ import Arrow from './Arrow'
 import Slide from './Slide';
 import ControlBar from './ControlBar';
 
-const getWidth = window.innerWidth;
 function Slider(props) {
   const SliderCss = css`width:100vw; height:100vh; overflow:hidden;`;
   const { slides,transitionTime,transitionInterval } = props;
@@ -16,8 +15,8 @@ function Slider(props) {
       "activeIndex": 0,
       "transition": transitionTime,
       "inTransition":false,
-      "width": getWidth,
-      "translate": -getWidth,
+      "width": window.innerWidth,
+      "translate": -window.innerWidth,
       "_slides":[3,0,1]
     })
 
@@ -27,7 +26,7 @@ function Slider(props) {
 
   useEffect(()=>{
     const cleanup = window.addEventListener('resize',() => {
-      setState({...state,width:getWidth,translate:-getWidth});
+      setState({...state,width:window.innerWidth,translate:-window.innerWidth});
       return cleanup;
     })
   },[])
@@ -70,7 +69,7 @@ function Slider(props) {
     const play = () => {
       nextRef.current();
   }
-    window.onresize = ()=>{setState({...stateRef.current,width:getWidth,translate:-getWidth})}
+    window.onresize = ()=>{setState({...stateRef.current,width:window.innerWidth,translate:-window.innerWidth})}
     let id = setInterval(play, 5000);
     return () =>
     {
