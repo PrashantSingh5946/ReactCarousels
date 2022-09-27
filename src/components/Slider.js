@@ -75,7 +75,7 @@ function Slider(props) {
     {
       clearInterval(id);
     }
-  },[state.activeIndex])
+  },[state])
 
 
   return (
