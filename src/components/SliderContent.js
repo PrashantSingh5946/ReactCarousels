@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import {css} from '@emotion/react'
-import Slide from './Slide'
+import Slide from './Slide.tsx'
 
 function SliderContent(props) {
     const {width,translate} = props;
