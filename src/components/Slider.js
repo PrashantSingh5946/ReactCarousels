@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import SliderContent from './SliderContent';
 import Arrow from './Arrow.tsx'
 import Slide from './Slide';
-import ControlBar from './ControlBar';
+import ControlBar from './ControlBar.tsx';
 
 function Slider(props) {
   const SliderCss = css`width:100vw; height:100vh; overflow:hidden;`;

@@ -2,14 +2,18 @@
 import React, { memo } from 'react'
 import { css, jsx } from '@emotion/react'
 
-const ControlBar = ({slides,state}) => {
+type ControlBarProps = {
+  slides: string[];
+  state: any;
+}
+const ControlBar: React.FunctionComponent<ControlBarProps> = ({ slides, state }: ControlBarProps) => {
   return (
     <div
-      
+
       css={css`
       position: absolute;
       bottom: 40px;
-      width: ${(20+20*(slides.length-1))}px;
+      width: ${(20 + 20 * (slides.length - 1))}px;
       height: 20px;
       background: rgba(255,255,255,0.5);
       left: 0;
@@ -36,7 +40,7 @@ const ControlBar = ({slides,state}) => {
       `}
     >
       {
-          slides.map((slide,index) => <div key={index} className={index==state.activeIndex?"dot active":"dot"}></div>)
+        slides.map((_, index) => <div key={index} className={index == state.activeIndex ? "dot active" : "dot"}></div>)
       }
     </div>
   )
