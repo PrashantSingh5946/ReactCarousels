@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { useState, useEffect, useRef } from 'react';
 import SliderContent from './SliderContent';
-import Arrow from './Arrow'
+import Arrow from './Arrow.tsx'
 import Slide from './Slide';
 import ControlBar from './ControlBar';
 

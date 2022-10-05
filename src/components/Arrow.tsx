@@ -4,7 +4,12 @@ import { css, jsx } from '@emotion/react'
 import leftArrow from '../img/left-arrow.svg'
 import rightArrow from '../img/right-arrow.svg'
 
-const Arrow = ({ direction, handleClick }) => {
+type ArrowProps = {
+  direction: string;
+  handleClick: () => {}
+}
+
+const Arrow: React.FunctionComponent<ArrowProps> = ({ direction, handleClick }: ArrowProps) => {
   return (
     <div
       onClick={handleClick}
@@ -35,7 +40,7 @@ const Arrow = ({ direction, handleClick }) => {
         }
       `}
     >
-      {direction === 'right' ? <img src={rightArrow} /> : <img src={leftArrow} />}
+      {direction === 'right' ? <img src={rightArrow.toString()} /> : <img src={leftArrow.toString()} />}
     </div>
   )
 }
